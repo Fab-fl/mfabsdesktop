@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MFabpaper</title>
+</head>
+
+<body>
+    <div class="square">
+        <button class="play_btn">|></button>
+
+    </div>
+    <div class="rgbback">
+        <div class="clock">
+            <div class="numbers">
+                <div id="hours">00</div>
+                <div id ="dp">:</div>
+                <div id="minutes">00</div>
+                <div id="dp">:</div>
+                <div id="seconds">00</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        const play = document.querySelector(".play_btn");
+        play.addEventListener("click", () => {
+               
+        })
+        function clock(){
+            var hours = document.getElementById('hours');
+            var minutes = document.getElementById('minutes');
+            var seconds = document.getElementById('seconds');
+
+            var h = new Date().getHours();
+            var m = new Date().getMinutes();
+            var s = new Date().getSeconds();
+
+            hours.innerHTML = h;
+            minutes.innerHTML = m;
+            seconds.innerHTML = s;
+        }
+        var interval = setInterval(clock, 1000);
+        
+        
+
+    </script>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #101318;
+        }
+        .rgbback{
+            background: linear-gradient(135deg, #00b4cc, #e2aa30, #cc00b4);
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            width:100;
+            height:100;
+            padding:7px;
+            margin-left:1500px;
+            margin-right:100px;
+            margin-top:20px;
+            animation: ftrgb 1.5s linear infinite;
+            line-height: 85px;
+            box-shadow: 0 0 50px #00ff40;
+            text-shadow: 0 0 1px #00ff40;
+        }
+        .clock{
+            border-radius: 10px;
+            background-color: rgb(40, 40, 40);
+            
+        }
+        @keyframes ftrgb{
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+        .numbers{
+            background-color: rgb(40, 40, 40);
+            border-radius: 6px;
+            letter-spacing: 3px;
+            font-size: 50px;
+            background: linear-gradient(135deg, #00b4cc, #e2aa30, #cc00b4);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            
+            
+        }
+        .play_btn{
+            border-color: chartreuse;
+            background-color: #101318;
+            color:chartreuse;
+            margin:30px;
+        }
+
+        .square {
+            border: solid 2px;
+            margin:20px;
+            border-color:rgb(128, 255, 0);
+            width:90px;
+            height:90px;
+            background-color: rgb(68, 67, 67);
+            box-shadow: greenyellow;
+        }
+    </style>
+</body>
